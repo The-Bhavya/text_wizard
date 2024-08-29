@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid px-0">
+
+</div>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-5 mx-auto">
+            <form method="post" class="card mb-3" enctype="multipart/form-data">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        Text Wizard - File Upload
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <p class="lead">
+                            Text Wizard is a simple tool that allows you to upload a text file
+                            and perform various Natural Language Processing (NLP) tasks on it.
+                        </p>
+                        <hr>
+                        <input type="file" class="form-control form-control-lg" name="file" id="file"
+                            placeholder="Select a text file" aria-describedby="fileHelpId" accept=".txt,.docx,.pdf">
+                        <div id="fileHelpId" class="form-text">{{errors}}</div>
+                        <div class="muted mt-3">
+                            <small>Only .txt/.docx/.pdf files are allowed</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-upload"></i>
+                            Upload
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <div class="card mb-3">
+                <div class="card-body ">
+                    <h5 class="d-flex justify-content-between">Selected File
+                        <span class="badge bg-success">
+                            <i class="fas fa-file"></i>
+                            {{session.get('file', 'No file selected')}}
+                        </span>
+                    </h5>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <!-- show all files -->
+                    <h5 class="card-title">
+                        <i class="fas fa-folder"></i> Uploaded Files
+                    </h5>
+                    <ul class="list-group list-group-flush">
+                        {% for file in files %}
+                        <li class="list-group-item py-2">
+                            <div class="d-flex justify-content-between">
+                                <p class="lead">
+                                    <i class="fas fa-file"></i>
+                                    {{file}}
+                                </p>
+                                <div class="actions">
+                                    <a href="/delete/{{file}}" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                    <a href="/select/{{file}}" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-check"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body d-grid">
+                    <a href="/wizard" class="btn btn-lg btn-primary">
+                        <i class="fas fa-magic"></i>
+                        Perform NLP Tasks
+                    </a>
+                    <small class="text-muted mt-3">
+                        <i class="fas fa-info-circle"></i>
+                        You can only perform NLP tasks on a selected file.
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+
+</script>
+{% endblock %}
+{% block css %}
+<style>
+
+</style>
+{% endblock %}
+{% block head %}{% endblock %}

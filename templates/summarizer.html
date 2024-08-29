@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="p-5 mb-4 rounded-3">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Text Summary</h1>
+        <small class="text-muted">
+            <i class="fas fa-file"></i> Selected File : {{file}}
+        </small>
+        
+        <p class="col-md-8 fs-4 my-3">
+            {{result}}
+        </p>
+        <hr>
+        <form method="post">
+            <div class="d-flex justify-content-start align-items-center gap-3">
+                <div class="mb-3">
+                    <label for="size" class="form-label">Sentence Size</label>
+                    <select class="form-select form-select-lg" name="size" id="size" help="sizeHelp">
+                        <option selected disabled>Select one</option>
+                        {% for i in range(2, 11) %}
+                        <option value="{{i}}">{{i}}</option>
+                        {% endfor %}
+                    </select>
+                    <div id="sizeHelp" class="form-text">Select the number of sentences to summarize</div>
+                </div>
+                <div class="mb-3">
+                    <label for="algorithm" class="form-label">Algorithm</label>
+                    <select class="form-select form-select-lg" name="algorithm" id="algorithm" help="algorithmHelp">
+                        <option selected disabled>Select one</option>
+                        <option value="lsa">LSA</option>
+                        <option value="lex_rank">Lex Rank</option>
+                        <option value="text_rank">Text Rank</option>
+                        <option value="luhn">Luhn</option>
+                    </select>
+                    <div id="algorithmHelp" class="form-text">Select the algorithm to use for summarization</div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">Try Again</butto>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+{% block js %}
+<script>
+
+</script>
+{% endblock %}
+{% block css %}
+<style>
+
+</style>
+{% endblock %}
+{% block head %}{% endblock %}

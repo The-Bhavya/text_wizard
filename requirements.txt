@@ -1,0 +1,9 @@
+pandas
+numpy
+nltk
+plotly
+flask
+wordcloud
+dputils
+textblob
+sumy

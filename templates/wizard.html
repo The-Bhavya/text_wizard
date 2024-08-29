@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid px-0">
+    <div class="p-5 mb-4 rounded-3">
+        <div class="container-fluid">
+            <h1 class="display-5 fw-bold">
+                Text Wizard Operations
+            </h1>
+            <p class="col-md-8 fs-4">
+                Select the operation you want to perform on the text. You can summarize the text or analyze the sentiment of
+                the text. 
+            </p>
+        </div>
+    </div>
+
+</div>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card mb-3" style="max-width: 600px;">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="https://picsum.photos/200/300" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <h5 class="card-title">Text Summarizer</h5>
+                            <p class="card-text">
+                                Text Summarizer is a tool that helps you summarize long articles, essays, research
+                                papers, and other content.
+                            </p>
+                            <p class="card-text"><small class="text-body-secondary">
+                                    <a href="/summarizer" class="btn btn-primary">Try Now</a>
+                                </small>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="https://picsum.photos/200/300" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <h5 class="card-title">Sentiment Analysis</h5>
+                            <p class="card-text">
+                                Sentiment Analysis is a tool that helps you analyze the sentiment of a piece of text.
+                            </p>
+                            <p class="card-text"><small class="text-body-secondary">
+                                    <a href="/sentiment" class="btn btn-primary">Try Now</a>
+                                </small>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+
+</script>
+{% endblock %}
+{% block css %}
+<style>
+
+</style>
+{% endblock %}
+{% block head %}{% endblock %}
