@@ -12,7 +12,8 @@ import plotly.graph_objs as go
 import plotly.express as px
 from textblob import TextBlob
 from pathlib import Path
-
+from dputils.files import get_data
+import os
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'docx'}
 
 def summarize_text_from_file(file_path, summary_sentences=5, algorithm='lsa', language='english'):
@@ -20,8 +21,11 @@ def summarize_text_from_file(file_path, summary_sentences=5, algorithm='lsa', la
     if not Path(file_path).is_file():
         raise FileNotFoundError(f"File not found: {file_path}")
     # Read text from file
-    with open(file_path, 'r', encoding='utf-8') as file:
-        text = file.read()
+    text = get_data(path=file_path)
+    if not text:
+        return "⚠️ Data could not be extracted from the file"
+    # with open(file_path, 'r', encoding='utf-8') as file:
+    #     text = file.read()
     # Initialize the parser
     parser = PlaintextParser.from_string(text, Tokenizer(language))
     stemmer = Stemmer(language)
@@ -52,9 +56,9 @@ def analyze_sentiment_from_file(file_path):
         raise FileNotFoundError(f"File not found: {file_path}")
 
     # Read text from file
-    with open(file_path, 'r', encoding='utf-8') as file:
-        text = file.read()
-
+    # with open(file_path, 'r', encoding='utf-8') as file:
+    #     text = file.read()
+    text = get_data(path=file_path)
     # Split text into sentences
     sentences = text.split('.')
     sentiments = []
