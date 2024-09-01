@@ -1,48 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Wizard - Advanced AI Text Analysis (Space Theme)</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"
+        integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #0a0a1f;
             color: #e0e0ff;
-            background-image: 
-                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
-                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
-                radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+            background-image:
+                radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
+                radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
+                radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px),
+                radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px);
             background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
             background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
             background-attachment: fixed;
         }
+
         .gradient-bg {
-            background: linear-gradient(135deg, #271054 0%,#1a0b2e 100%,);
+            background: linear-gradient(135deg, #271054 0%, #1a0b2e 100%, );
         }
+
         .hover-grow {
             transition: transform 0.3s ease;
         }
+
         .hover-grow:hover {
             transform: scale(1.05);
         }
-        h1, h2, h3 {
+
+        h1,
+        h2,
+        h3 {
             font-family: 'Orbitron', sans-serif;
         }
     </style>
 </head>
+
 <body>
     <header class="bg-opacity-80 bg-gray-900 backdrop-filter backdrop-blur-lg shadow-md py-4 sticky top-0 z-50 ">
         <nav class="container mx-auto px-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-indigo-400">Text Wizard</a>
             <ul class="flex space-x-6">
+                <li><a href="http://127.0.0.1:5000/about"
+                        class="hover:text-indigo-400 transition duration-300">About</a></li>
                 <li><a href="#features" class="hover:text-indigo-400 transition duration-300">Features</a></li>
                 <li><a href="#how-it-works" class="hover:text-indigo-400 transition duration-300">How It Works</a></li>
-                <li><a href="#demo" class="hover:text-indigo-400 transition duration-300">Demo</a></li>
+                <li><a href="#use-cases" class="hover:text-indigo-400 transition duration-300">Use Case</a></li>
 
                 <li><a href="#contact" class="hover:text-indigo-400 transition duration-300">Contact</a></li>
             </ul>
@@ -54,12 +67,17 @@
             <div class="h-screen container mx-auto px-4 flex items-start justify-between">
                 <div class="w-1/2">
                     <h1 class="text-5xl font-bold mb-6 text-indigo-300 r ">Unleash the Magic of NLP Text Analysis</h1>
-                    <p class="text-xl mb-8">Transform your text data into cosmic insights with Text Wizard's  algorithms.</p>
-                    <p class="text-xl mb-16">Elevate text into understanding: Summarize the essence, capture the sentiment.</p>
-                    <a href="#demo" class="bg-indigo-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-indigo-700 transition duration-300">Explore the Magic</a>
+                    <p class="text-xl mb-8">Transform your text data into cosmic insights with Text Wizard's algorithms.
+                    </p>
+                    <p class="text-xl mb-16">Elevate text into understanding: Summarize the essence, capture the
+                        sentiment.</p>
+                    <a href="#demo"
+                        class="bg-indigo-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-indigo-700 transition duration-300">Explore
+                        the Magic</a>
                 </div>
                 <div class="w-1/2">
-                    <img src="https://media.licdn.com/dms/image/D5612AQHHUm0eYjStmA/article-cover_image-shrink_720_1280/0/1714948329938?e=2147483647&v=beta&t=4pbqMDKbM85GbJDzZaS--TlV2wXJv9tB2KF5eBp-GD0" alt="AI Text Analysis" class="rounded-lg shadow-2xl">
+                    <img src="https://media.licdn.com/dms/image/D5612AQHHUm0eYjStmA/article-cover_image-shrink_720_1280/0/1714948329938?e=2147483647&v=beta&t=4pbqMDKbM85GbJDzZaS--TlV2wXJv9tB2KF5eBp-GD0"
+                        alt="AI Text Analysis" class="rounded-lg shadow-2xl">
                 </div>
             </div>
         </section>
@@ -69,14 +87,17 @@
                 <h2 class="text-4xl font-bold text-center mb-16 text-indigo-300">Magical Features</h2>
                 <div class="grid md:grid-cols-3 gap-12 ">
                     <div class="text-center hover-grow bg-opacity-50 bg-gray-800 p-6 rounded-lg">
-                        <img src="https://cdn.activestate.com/wp-content/uploads/2021/12/python-text-summarization.jpg" alt="Text Summarization" class="mx-auto mb-6 rounded-lg shadow-lg">
+                        <img src="https://cdn.activestate.com/wp-content/uploads/2021/12/python-text-summarization.jpg"
+                            alt="Text Summarization" class="mx-auto mb-6 rounded-lg shadow-lg">
                         <h3 class="text-2xl font-semibold mb-4 text-indigo-400">Text Summarization</h3>
                         <p>Condense lengthy texts into concise, meaningful summaries without losing key information.</p>
                     </div>
                     <div class="text-center hover-grow bg-opacity-50 bg-gray-800 p-6 rounded-lg ">
-                        <img src="https://infra-cloudfront-talkdeskcom.svc.talkdeskapp.com/talkdesk_com/sentiment-analysis-2280x1160.png" alt="Sentiment Analysis" class="mx-auto mb-6 rounded-lg shadow-lg">
+                        <img src="https://infra-cloudfront-talkdeskcom.svc.talkdeskapp.com/talkdesk_com/sentiment-analysis-2280x1160.png"
+                            alt="Sentiment Analysis" class="mx-auto mb-6 rounded-lg shadow-lg">
                         <h3 class="text-2xl font-semibold mb-4 text-indigo-400">Sentiment Analysis</h3>
-                        <p>Understand the emotional tone of your text with our advanced AI-powered sentiment analysis.</p>
+                        <p>Understand the emotional tone of your text with our advanced AI-powered sentiment analysis.
+                        </p>
                     </div>
 
                 </div>
@@ -87,28 +108,36 @@
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-16 text-indigo-300">How Text Wizard Works</h2>
                 <div class="flex items-center justify-center ">
-                    <img src="" alt="How Text Wizard Works" class="rounded-lg shadow-xl">
+                    <!-- <img src="" alt="How Text Wizard Works" class="rounded-lg shadow-xl"> -->
                 </div>
                 <div class="mt-12 grid md:grid-cols-4 gap-8 text-center">
                     <div class="bg-opacity-50 bg-gray-800 p-6 rounded-lg">
-                        <div class="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
-                        <h3 class="text-xl font-semibold mb-2 text-indigo-400">Input Text</h3>
+                        <div
+                            class="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                            1</div>
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-400">Upload File</h3>
                         <p>Provide your text through our user-friendly interface or API.</p>
                     </div>
                     <div class="bg-opacity-50 bg-gray-800 p-6 rounded-lg">
-                        <div class="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+                        <div
+                            class="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                            2</div>
                         <h3 class="text-xl font-semibold mb-2 text-indigo-400">AI Processing</h3>
                         <p>Our advanced algorithms analyze your text using state-of-the-art NLP techniques.</p>
                     </div>
                     <div class="bg-opacity-50 bg-gray-800 p-6 rounded-lg">
-                        <div class="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+                        <div
+                            class="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                            3</div>
                         <h3 class="text-xl font-semibold mb-2 text-indigo-400">Generate Insights</h3>
                         <p>Text Wizard extracts key information , sentiments from your text.</p>
                     </div>
                     <div class="bg-opacity-50 bg-gray-800 p-6 rounded-lg">
-                        <div class="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
+                        <div
+                            class="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                            4</div>
                         <h3 class="text-xl font-semibold mb-2 text-indigo-400">Deliver Results</h3>
-                        <p>Receive clear, actionable insights in your preferred format.</p>
+                        <p>Receive clear, actionable insights in form of text and graphs .</p>
                     </div>
                 </div>
             </div>
@@ -119,34 +148,66 @@
                 <h2 class="text-4xl font-bold text-center mb-16 text-indigo-300 ">Use Cases</h2>
                 <div class="grid md:grid-cols-2 gap-12">
                     <div class="flex items-start bg-opacity-50 bg-gray-800 p-6 rounded-lg">
-                        <img src="/api/placeholder/100/100" alt="Business Intelligence" class="mr-6 rounded-full">
+                        <img src="https://thumbs.dreamstime.com/b/bulb-future-technology-innovation-background-creative-idea-concept-artificial-intelligence-background-artificial-intelligence-141652156.jpg"
+                            alt="Business Intelligence" class="mr-6 w-22 h-28">
                         <div>
                             <h3 class="text-2xl font-semibold mb-4 text-indigo-400">Business Intelligence</h3>
-                            <p>Analyze customer feedback, reviews, and social media mentions to gain valuable insights for your business strategy.</p>
+                            <p>Analyze customer feedback, reviews, and social media mentions to gain valuable insights
+                                for your business strategy.</p>
                         </div>
                     </div>
                     <div class="flex items-start bg-opacity-50 bg-gray-800 p-6 rounded-lg">
-                        <img src="/api/placeholder/100/100" alt="Content Creation" class="mr-6 rounded-full">
+                        <img src="https://thumbs.dreamstime.com/b/content-creation-word-cloud-concept-grey-background-90879258.jpg"
+                            alt="Content Creation" class="mr-6 w-22 h-28">
                         <div>
                             <h3 class="text-2xl font-semibold mb-4 text-indigo-400">Content Creation</h3>
-                            <p>Summarize long-form content and generate article ideas based on trending topics in your industry.</p>
+                            <p>Summarize long-form content and generate article ideas based on trending topics in your
+                                industry.</p>
                         </div>
                     </div>
                     <div class="flex items-start bg-opacity-50 bg-gray-800 p-6 rounded-lg">
-                        <img src="/api/placeholder/100/100" alt="Academic Research" class="mr-6 rounded-full">
+                        <img src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/112788011/original/cfa5ecc75a55c2b48b4411c82303d459ab2d22fa/do-your-research-summary-and-project-writing-topics.jpg"
+                            alt="Academic Research" class="mr-6 w-22 h-28">
                         <div>
                             <h3 class="text-2xl font-semibold mb-4 text-indigo-400">Academic Research</h3>
-                            <p>Quickly analyze and summarize research papers, extracting key findings and methodologies.</p>
+                            <p>Quickly analyze and summarize research papers, extracting key findings and methodologies.
+                            </p>
                         </div>
                     </div>
                     <div class="flex items-start bg-opacity-50 bg-gray-800 p-6 rounded-lg">
-                        <img src="/api/placeholder/100/100" alt="Customer Support" class="mr-6 rounded-full">
+                        <img src="https://img.freepik.com/free-vector/flat-design-illustration-customer-support_23-2148887720.jpg"
+                            alt="Customer Support" class="mr-6 w-22 h-28">
                         <div>
                             <h3 class="text-2xl font-semibold mb-4 text-indigo-400">Customer Support</h3>
-                            <p>Analyze support tickets and chat logs to identify common issues and improve customer satisfaction.</p>
+                            <p> Improve customer satisfaction.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <section id="contact" class="py-20 bg-gray-900 bg-opacity-80">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-16 glow">Contact</h2>
+            </div>
+            <!-- Item -->
+            <div class="flex gap-x-5">
+                <svg class="mx-auto text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                        d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z" />
+                    <path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10" />
+                </svg>
+                <div class="grow">
+                    <h4 class="px-2 font-semibold">Email us:</h4>
 
+                    <a class="mt-12 text-neutral-400 text-sm hover:text-neutral-200 focus:outline-none focus:text-neutral-200"
+                        href="#mailto:example@site.co" target="_blank">
+                        hello@example.so
+                    </a>
+                </div>
+            </div>
+            <!-- End Item -->
+        </section>
+    </main>
+</body>
