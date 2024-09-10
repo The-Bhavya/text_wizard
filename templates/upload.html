@@ -1,11 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container-fluid px-0">
 
-</div>
 <div class="container py-5">
     <div class="row">
-        <div class="col-md-5 mx-auto">
+        <div class="col-md-6 mx-auto">
             <form method="post" class="card mb-3" enctype="multipart/form-data">
                 <div class="card-header">
                     <h3 class="card-title">
@@ -46,6 +44,8 @@
                     </h5>
                 </div>
             </div>
+        </div>
+        <div class="col-md-6 mx-auto">
             <div class="card mb-3">
                 <div class="card-body">
                     <!-- show all files -->
@@ -87,6 +87,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 {% endblock %}
