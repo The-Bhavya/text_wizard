@@ -1,227 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Text Wizard - Unleash the Power of NLP</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
-    </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'orbitron': ['Orbitron', 'sans-serif'],
-                        'roboto': ['Roboto', 'sans-serif'],
-                    },
-                    colors: {
-                        space: {
-                            dark: '#0a0a2a',
-                            light: '#1a1a4a',
-                        },
-                        neon: {
-                            blue: '#4dc9ff',
-                            purple: '#b967ff',
-                            pink: '#ff71ce',
-                        },
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                }
-            }
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a1f;
+            color: #e0e0ff;
+            background-image:
+                radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
+                radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
+                radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px),
+                radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px);
+            background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+            background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+            background-attachment: fixed;
         }
-    </script>
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #271054 0%, #1a0b2e 100%);
+        }
+
+        .hover-grow {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-grow:hover {
+            transform: scale(1.05);
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Orbitron', sans-serif;
+        }
+    </style>
+
 </head>
-<body class="bg-space-dark text-white font-roboto">
-    <div id="stars" class="fixed inset-0 z-0"></div>
-    
-    <header class="fixed w-full z-10 bg-space-dark bg-opacity-70 backdrop-blur-md">
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <a href="#" class="text-2xl font-orbitron font-bold text-neon-blue">Text Wizard</a>
-                <div class="hidden md:flex space-x-6">
-                    <a href="http://127.0.0.1:5000/" class="hover:text-neon-purple transition duration-300">Home</a>
-                    <a href="#features" class="hover:text-neon-purple transition duration-300">Features</a>
-                    <a href="#technology" class="hover:text-neon-purple transition duration-300">Technology</a>
-                    <a href="http://127.0.0.1:5000/upload" class="hover:text-neon-purple transition duration-300">Upload file</a>
-                    <a href="#contact" class="hover:text-neon-purple transition duration-300">Contact</a>
-                </div>
-            </div>
+
+<body>
+    <header class="bg-opacity-80 bg-gray-900 backdrop-filter backdrop-blur-lg shadow-md py-4 sticky top-0 z-50">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-400">Text Wizard</a>
+            <ul class="flex space-x-6">
+                <li><a href="http://127.0.0.1:5000/about"
+                        class="hover:text-indigo-400 transition duration-300">About</a></li>
+                <li><a href="#features" class="hover:text-indigo-400 transition duration-300">Features</a></li>
+                <li><a href="#how-it-works" class="hover:text-indigo-400 transition duration-300">How It Works</a></li>
+                <li><a href="#use-cases" class="hover:text-indigo-400 transition duration-300">Use Case</a></li>
+                <li><a href="#contact" class="hover:text-indigo-400 transition duration-300">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <main class="relative z-1">
-        <section id="hero" class="h-screen flex items-center justify-center text-center">
-            <div class="container mx-auto px-6">
-                <h1 class="text-5xl md:text-7xl font-orbitron font-bold mb-4 text-neon-blue animate-pulse-slow">Project Text Wizard</h1>
-                <p class="text-xl md:text-2xl mb-8">Unleash the Power of Natural Language Processing</p>
-                <a href="http://127.0.0.1:5000/upload" class="bg-neon-purple text-space-dark py-3 px-8 rounded-full text-lg font-semibold hover:bg-neon-pink transition duration-300">Explore the Magic</a>
-            </div>
-        </section>
-
-        <section id="about" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-orbitron font-bold mb-8 text-center text-neon-pink">About Our Cosmic Mission</h2>
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <p class="mb-4">Project Text Wizard is your gateway to the universe of Natural Language Processing. We harness the power of advanced AI techniques to unlock the hidden potential within text data, enabling businesses and researchers to gain unprecedented insights from their textual information.</p>
-                        <p class="mb-4">Our journey began with a simple vision: to make the vast sea of textual data accessible and meaningful to everyone. Today, we're proud to offer a suite of powerful NLP tools that are transforming how organizations interact with and understand text.</p>
-                        <p>From startups to Fortune 500 companies, our solutions are empowering teams to make data-driven decisions, automate text-intensive processes, and discover patterns that were previously hidden in plain sight.</p>
-                    </div>
-                    <div class="relative h-64 nlp-visualizer" id="about-visualizer">
-                        <!-- NLP elements will be added here dynamically -->
+    <main class="container mx-auto px-4 py-8 relative z-10">
+        <!-- Mission Section -->
+        <section id="mission" class="mb-16">
+            <h2 class="text-4xl font-bold mb-6 text-indigo-300">Our Mission</h2>
+            <div class="flex flex-col md:flex-row items-center bg-gray-900 bg-opacity-50 p-8 rounded-lg shadow-lg">
+                <div class="md:w-1/2 mb-6 md:mb-0">
+                    <p class="text-lg mb-4">At Cosmic Data Sorcerer, we harness the power of advanced data science to
+                        decode the hidden patterns of the universe. Our mission is to transform raw data into celestial
+                        insights, revealing the interconnectedness of all things.</p>
+                    <p class="text-lg">Join us on a journey through the cosmos of information, where every data point is
+                        a star waiting to be discovered.</p>
+                </div>
+                <div class="md:w-1/2 md:pl-8 flex justify-center">
+                    <div class="relative">
+                        <div class=""></div>
+                        <img src="https://www.igdsolutions.com/sites/all/themes/igd/images/our-mission.png" alt="Data Visualization"
+                            class="shadow-lg ">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="features" class="py-20 bg-space-light">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-orbitron font-bold mb-12 text-center text-neon-blue">Celestial Features</h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-space-dark p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
-                        <h3 class="text-2xl font-orbitron font-semibold mb-4 text-neon-purple">Text Summarization</h3>
-                        <p>Condense lengthy documents into concise, informative summaries. Our advanced algorithms capture the essence of the text, saving you time and effort in information processing.</p>
+        <!-- Capabilities Section -->
+        <section id="capabilities" class="mb-16">
+            <h2 class="text-4xl font-bold mb-6 text-indigo-300">Our Capabilities</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-900 bg-opacity-50 p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-brain text-3xl text-indigo-400 mr-4"></i>
+                        <h3 class="text-xl font-bold text-indigo-300">Advanced Analysis</h3>
                     </div>
-                    <div class="bg-space-dark p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
-                        <h3 class="text-2xl font-orbitron font-semibold mb-4 text-neon-purple">Sentiment Analysis</h3>
-                        <p>Uncover the emotional tone and opinions within text data. Gain valuable insights into customer feedback, social media trends, and market sentiment to drive your business strategy.</p>
+                    <p>Our neural networks dive into the depths of your data, discovering hidden connections and
+                        patterns invisible to the naked eye.</p>
+                </div>
+                <div class="bg-gray-900 bg-opacity-50 p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chart-line text-3xl text-indigo-400 mr-4"></i>
+                        <h3 class="text-xl font-bold text-indigo-300">Trend Prediction</h3>
                     </div>
-                    <div class="bg-space-dark p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
-                        <h3 class="text-2xl font-orbitron font-semibold mb-4 text-neon-purple">Named Entity Recognition</h3>
-                        <p>Automatically identify and classify named entities such as persons, organizations, and locations within text. Enhance your data extraction and information retrieval processes.</p>
+                    <p>Harness the power of algorithms to predict future trends with unprecedented accuracy.</p>
+                </div>
+                <div class="bg-gray-900 bg-opacity-50 p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-language text-3xl text-indigo-400 mr-4"></i>
+                        <h3 class="text-xl font-bold text-indigo-300">Language Processing</h3>
                     </div>
+                    <p>Decipher the language of the universe with our advanced NLP techniques, extracting meaning from
+                        the vast cosmos of textual data.</p>
+                </div>
+                <div class="bg-gray-900 bg-opacity-50 p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-project-diagram text-3xl text-indigo-400 mr-4"></i>
+                        <h3 class="text-xl font-bold text-indigo-300">Data Visualization</h3>
+                    </div>
+                    <p>Group and visualize your data points, revealing the shape and structure of your information
+                        universe.</p>
                 </div>
             </div>
         </section>
 
-        <section id="technology" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-orbitron font-bold mb-12 text-center text-neon-pink">Our Quantum Technology</h2>
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="space-y-4">
-                        <div class="bg-space-light p-4 rounded-lg">
-                            <h3 class="text-xl font-semibold mb-2 text-neon-blue">Tokenization</h3>
-                            <p>Breaking down text into individual words or subwords</p>
-                        </div>
-                        <div class="bg-space-light p-4 rounded-lg">
-                            <h3 class="text-xl font-semibold mb-2 text-neon-blue">Stemming & Lemmatization</h3>
-                            <p>Reducing words to their root form for improved analysis</p>
-                        </div>
-                        <div class="bg-space-light p-4 rounded-lg">
-                            <h3 class="text-xl font-semibold mb-2 text-neon-blue">Deep Learning Models</h3>
-                            <p>Utilizing state-of-the-art neural networks for complex language understanding tasks</p>
-                        </div>
-                    </div>
-                    <div class="relative h-96 nlp-visualizer" id="tech-visualizer">
-                        <!-- Tech visualization will be added here dynamically -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-20 bg-space-light">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-orbitron font-bold mb-8 text-center text-neon-blue">Contact the Wizards</h2>
-                <div class="max-w-md mx-auto">
-                    <form class="space-y-4">
-                        <input type="text" placeholder="Your Name" class="w-full p-2 bg-space-dark border border-neon-purple rounded text-white">
-                        <input type="email" placeholder="Your Email" class="w-full p-2 bg-space-dark border border-neon-purple rounded text-white">
-                        <textarea placeholder="Your Message" rows="4" class="w-full p-2 bg-space-dark border border-neon-purple rounded text-white"></textarea>
-                        <button type="submit" class="w-full bg-neon-purple text-space-dark py-2 px-4 rounded hover:bg-neon-pink transition duration-300">Send Message</button>
-                    </form>
+        <!-- Process Section -->
+        <section id="process" class="mb-16">
+            <h2 class="text-4xl font-bold mb-6 text-indigo-300">The Process</h2>
+            <div class="relative">
+                <div class="absolute inset-0 bg-gradient-to-b from-gray-700 to-gray-900 opacity-50 rounded-lg"></div>
+                <div class="relative bg-gray-800 bg-opacity-50 p-8 rounded-lg shadow-lg">
+                    <ol class="space-y-6">
+                        <li class="flex items-center">
+                            <span
+                                class="bg-indigo-600 rounded-full w-8 h-8 flex items-center justify-center text-gray-900 font-bold mr-4">1</span>
+                            <span class="text-lg"><span class="font-bold text-indigo-300">Data Collection:</span> Gather
+                                and map your raw data points.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span
+                                class="bg-indigo-600 rounded-full w-8 h-8 flex items-center justify-center text-gray-900 font-bold mr-4">2</span>
+                            <span class="text-lg"><span class="font-bold text-indigo-300">Data Cleaning:</span> Purify
+                                and prepare your data.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span
+                                class="bg-indigo-600 rounded-full w-8 h-8 flex items-center justify-center text-gray-900 font-bold mr-4">3</span>
+                            <span class="text-lg"><span class="font-bold text-indigo-300">Analysis:</span> Apply
+                                advanced algorithms to decode patterns.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span
+                                class="bg-indigo-600 rounded-full w-8 h-8 flex items-center justify-center text-gray-900 font-bold mr-4">4</span>
+                            <span class="text-lg"><span class="font-bold text-indigo-300">Visualization:</span>
+                                Transform insights into interactive displays.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span
+                                class="bg-indigo-600 rounded-full w-8 h-8 flex items-center justify-center text-gray-900 font-bold mr-4">5</span>
+                            <span class="text-lg"><span class="font-bold text-indigo-300">Insights:</span> Provide
+                                actionable, data-driven recommendations.</span>
+                        </li>
+                    </ol>
                 </div>
             </div>
         </section>
     </main>
-
-    <footer class="bg-space-dark text-white py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2024 Project Text Wizard. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Create starry background
-        const starsContainer = document.getElementById('stars');
-        for (let i = 0; i < 200; i++) {
-            const star = document.createElement('div');
-            star.className = 'absolute bg-white rounded-full';
-            star.style.width = `${Math.random() * 2}px`;
-            star.style.height = star.style.width;
-            star.style.left = `${Math.random() * 100}%`;
-            star.style.top = `${Math.random() * 100}%`;
-            star.style.opacity = Math.random();
-            starsContainer.appendChild(star);
-        }
-
-        // Animate stars
-        gsap.to('#stars div', {
-            opacity: 0.1,
-            stagger: 0.1,
-            repeat: -1,
-            yoyo: true,
-            ease: "power2.inOut",
-        });
-
-        // NLP Visualizer
-        const visualizers = document.querySelectorAll('.nlp-visualizer');
-        const nlpElements = ['Tokenization', 'Stemming', 'Lemmatization', 'NER', 'Sentiment', 'Summary'];
-        const colors = ['#4dc9ff', '#b967ff', '#ff71ce', '#01cdfe', '#05ffa1', '#fffb96'];
-
-        function createNlpElement(visualizer) {
-            const element = document.createElement('div');
-            const randomElement = nlpElements[Math.floor(Math.random() * nlpElements.length)];
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            
-            element.textContent = randomElement;
-            element.className = 'absolute px-3 py-1 text-sm rounded-full font-semibold';
-            element.style.backgroundColor = randomColor;
-            element.style.color = '#0a0a2a';
-            element.style.left = `${Math.random() * 80}%`;
-            element.style.top = `${Math.random() * 80}%`;
-            
-            visualizer.appendChild(element);
-
-            gsap.from(element, {
-                opacity: 0,
-                scale: 0,
-                duration: 0.5,
-                ease: "back.out(1.7)",
-            });
-
-            gsap.to(element, {
-                opacity: 0,
-                scale: 0,
-                duration: 0.5,
-                delay: 2,
-                ease: "back.in(1.7)",
-                onComplete: () => element.remove(),
-            });
-        }
-
-        visualizers.forEach(visualizer => {
-            setInterval(() => createNlpElement(visualizer), 1000);
-        });
-
-        // Scroll animations
-        gsap.utils.toArray('section').forEach((section, i) => {
-            gsap.from(section, {
-                opacity: 0,
-                y: 50,
-                duration: 1,
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top 80%",
-                    end: "top 20%",
-                    scrub: 1,
-                }
-            });
-        });
-    </script>
-</body>
-</html>
