@@ -1,170 +1,227 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmic Data Sorcerer - Unraveling Universal Mysteries</title>
+    <title>Project Text Wizard - Unleash the Power of NLP</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+    </style>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
+                    fontFamily: {
+                        'orbitron': ['Orbitron', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                    },
                     colors: {
-                        cosmic: {
-                            100: '#E0FFFF',
-                            200: '#B0E0E6',
-                            300: '#20B2AA',
-                            400: '#008B8B',
-                            500: '#006666',
-                            600: '#004C4C',
-                            700: '#003333',
-                            800: '#001A1A',
-                            900: '#000D0D',
+                        space: {
+                            dark: '#0a0a2a',
+                            light: '#1a1a4a',
                         },
-                        nebula: {
-                            100: '#FFD700',
-                            200: '#FFC000',
-                            300: '#FFA500',
-                            400: '#FF8C00',
-                            500: '#FF7F50',
+                        neon: {
+                            blue: '#4dc9ff',
+                            purple: '#b967ff',
+                            pink: '#ff71ce',
                         },
                     },
                     animation: {
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    }
-                },
-            },
+                    },
+                }
+            }
         }
     </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Orbitron:wght@400;700&display=swap');
-
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 800 800"%3E%3Cg fill="none" stroke="%23006666" stroke-width="1"%3E%3Cpath d="M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63"%3E%3C/path%3E%3Cpath d="M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764"%3E%3C/path%3E%3Cpath d="M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880"%3E%3C/path%3E%3Cpath d="M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382"%3E%3C/path%3E%3Cpath d="M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269"%3E%3C/path%3E%3C/g%3E%3Cg fill="%2320B2AA"%3E%3Ccircle cx="769" cy="229" r="5"%3E%3C/circle%3E%3Ccircle cx="539" cy="269" r="5"%3E%3C/circle%3E%3Ccircle cx="603" cy="493" r="5"%3E%3C/circle%3E%3Ccircle cx="731" cy="737" r="5"%3E%3C/circle%3E%3Ccircle cx="520" cy="660" r="5"%3E%3C/circle%3E%3Ccircle cx="309" cy="538" r="5"%3E%3C/circle%3E%3Ccircle cx="295" cy="764" r="5"%3E%3C/circle%3E%3Ccircle cx="40" cy="599" r="5"%3E%3C/circle%3E%3Ccircle cx="102" cy="382" r="5"%3E%3C/circle%3E%3Ccircle cx="127" cy="80" r="5"%3E%3C/circle%3E%3Ccircle cx="370" cy="105" r="5"%3E%3C/circle%3E%3Ccircle cx="578" cy="42" r="5"%3E%3C/circle%3E%3Ccircle cx="237" cy="261" r="5"%3E%3C/circle%3E%3Ccircle cx="390" cy="382" r="5"%3E%3C/circle%3E%3C/g%3E%3C/svg%3E');
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        .star {
-            animation: twinkle 1s infinite alternate;
-        }
-
-        @keyframes twinkle {
-            from {opacity: 0.5;}
-            to {opacity: 1;}
-        }
-    </style>
 </head>
-<body class="bg-cosmic-900 text-cosmic-100 min-h-screen">
-    <div class="fixed top-0 left-0 w-full h-full pointer-events-none z-10">
-        <div class="star absolute top-1/4 left-1/3 w-1 h-1 bg-nebula-300 rounded-full"></div>
-        <div class="star absolute top-1/2 left-2/3 w-2 h-2 bg-nebula-400 rounded-full"></div>
-        <div class="star absolute top-3/4 left-1/4 w-1.5 h-1.5 bg-nebula-200 rounded-full"></div>
-        <!-- Add more stars as needed -->
-    </div>
-
-    <header class="bg-cosmic-800 bg-opacity-80 py-6 sticky top-0 z-20">
-        <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold text-cosmic-100 text-nebula-200 tracking-wider">Text Wizard</h1>
-            <p class="text-2xl  text-cosmic-100 text-cosmic-300 mt-2">Elevate text into understanding: Summarize the essence, capture the sentiment</p>
-        </div>
+<body class="bg-space-dark text-white font-roboto">
+    <div id="stars" class="fixed inset-0 z-0"></div>
+    
+    <header class="fixed w-full z-10 bg-space-dark bg-opacity-70 backdrop-blur-md">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-orbitron font-bold text-neon-blue">Text Wizard</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="http://127.0.0.1:5000/" class="hover:text-neon-purple transition duration-300">Home</a>
+                    <a href="#features" class="hover:text-neon-purple transition duration-300">Features</a>
+                    <a href="#technology" class="hover:text-neon-purple transition duration-300">Technology</a>
+                    <a href="http://127.0.0.1:5000/upload" class="hover:text-neon-purple transition duration-300">Upload file</a>
+                    <a href="#contact" class="hover:text-neon-purple transition duration-300">Contact</a>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <nav class="bg-cosmic-700 bg-opacity-80 py-4 sticky top-20 z-20">
-        <div class="container mx-auto px-4">
-            <ul class="flex justify-center space-x-6">
-                <li><a href="#mission" class="text-cosmic-200 hover:text-nebula-300 transition duration-300">Our Mission</a></li>
-                <li><a href="#capabilities" class="text-cosmic-200 hover:text-nebula-300 transition duration-300">Capabilities</a></li>
-                <li><a href="#process" class="text-cosmic-200 hover:text-nebula-300 transition duration-300">The Process</a></li>
-                <li><a href="#insights" class="text-cosmic-200 hover:text-nebula-300 transition duration-300">Cosmic Insights</a></li>
-                <li><a href="#contact" class="text-cosmic-200 hover:text-nebula-300 transition duration-300">Contact</a></li>
-            </ul>
+    <main class="relative z-1">
+        <section id="hero" class="h-screen flex items-center justify-center text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-5xl md:text-7xl font-orbitron font-bold mb-4 text-neon-blue animate-pulse-slow">Project Text Wizard</h1>
+                <p class="text-xl md:text-2xl mb-8">Unleash the Power of Natural Language Processing</p>
+                <a href="http://127.0.0.1:5000/upload" class="bg-neon-purple text-space-dark py-3 px-8 rounded-full text-lg font-semibold hover:bg-neon-pink transition duration-300">Explore the Magic</a>
+            </div>
+        </section>
+
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-orbitron font-bold mb-8 text-center text-neon-pink">About Our Cosmic Mission</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <p class="mb-4">Project Text Wizard is your gateway to the universe of Natural Language Processing. We harness the power of advanced AI techniques to unlock the hidden potential within text data, enabling businesses and researchers to gain unprecedented insights from their textual information.</p>
+                        <p class="mb-4">Our journey began with a simple vision: to make the vast sea of textual data accessible and meaningful to everyone. Today, we're proud to offer a suite of powerful NLP tools that are transforming how organizations interact with and understand text.</p>
+                        <p>From startups to Fortune 500 companies, our solutions are empowering teams to make data-driven decisions, automate text-intensive processes, and discover patterns that were previously hidden in plain sight.</p>
+                    </div>
+                    <div class="relative h-64 nlp-visualizer" id="about-visualizer">
+                        <!-- NLP elements will be added here dynamically -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-20 bg-space-light">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-orbitron font-bold mb-12 text-center text-neon-blue">Celestial Features</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-space-dark p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                        <h3 class="text-2xl font-orbitron font-semibold mb-4 text-neon-purple">Text Summarization</h3>
+                        <p>Condense lengthy documents into concise, informative summaries. Our advanced algorithms capture the essence of the text, saving you time and effort in information processing.</p>
+                    </div>
+                    <div class="bg-space-dark p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                        <h3 class="text-2xl font-orbitron font-semibold mb-4 text-neon-purple">Sentiment Analysis</h3>
+                        <p>Uncover the emotional tone and opinions within text data. Gain valuable insights into customer feedback, social media trends, and market sentiment to drive your business strategy.</p>
+                    </div>
+                    <div class="bg-space-dark p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                        <h3 class="text-2xl font-orbitron font-semibold mb-4 text-neon-purple">Named Entity Recognition</h3>
+                        <p>Automatically identify and classify named entities such as persons, organizations, and locations within text. Enhance your data extraction and information retrieval processes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="technology" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-orbitron font-bold mb-12 text-center text-neon-pink">Our Quantum Technology</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-4">
+                        <div class="bg-space-light p-4 rounded-lg">
+                            <h3 class="text-xl font-semibold mb-2 text-neon-blue">Tokenization</h3>
+                            <p>Breaking down text into individual words or subwords</p>
+                        </div>
+                        <div class="bg-space-light p-4 rounded-lg">
+                            <h3 class="text-xl font-semibold mb-2 text-neon-blue">Stemming & Lemmatization</h3>
+                            <p>Reducing words to their root form for improved analysis</p>
+                        </div>
+                        <div class="bg-space-light p-4 rounded-lg">
+                            <h3 class="text-xl font-semibold mb-2 text-neon-blue">Deep Learning Models</h3>
+                            <p>Utilizing state-of-the-art neural networks for complex language understanding tasks</p>
+                        </div>
+                    </div>
+                    <div class="relative h-96 nlp-visualizer" id="tech-visualizer">
+                        <!-- Tech visualization will be added here dynamically -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-space-light">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-orbitron font-bold mb-8 text-center text-neon-blue">Contact the Wizards</h2>
+                <div class="max-w-md mx-auto">
+                    <form class="space-y-4">
+                        <input type="text" placeholder="Your Name" class="w-full p-2 bg-space-dark border border-neon-purple rounded text-white">
+                        <input type="email" placeholder="Your Email" class="w-full p-2 bg-space-dark border border-neon-purple rounded text-white">
+                        <textarea placeholder="Your Message" rows="4" class="w-full p-2 bg-space-dark border border-neon-purple rounded text-white"></textarea>
+                        <button type="submit" class="w-full bg-neon-purple text-space-dark py-2 px-4 rounded hover:bg-neon-pink transition duration-300">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-space-dark text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Project Text Wizard. All rights reserved.</p>
         </div>
-    </nav>
+    </footer>
 
-    <main class="container mx-auto px-4 py-8 relative z-10">
-        <section id="mission" class="mb-16">
-            <h2 class="text-3xl font-bold mb-6 text-nebula-300">Our Cosmic Mission</h2>
-            <div class="flex flex-col md:flex-row items-center bg-cosmic-800 bg-opacity-40 p-8 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm">
-                <div class="md:w-1/2 mb-6 md:mb-0">
-                    <p class="text-lg mb-4">At Cosmic Data Sorcerer, we harness the power of advanced data science to decode the hidden patterns of the universe. Our mission is to transform raw data into celestial insights, revealing the interconnectedness of all things.</p>
-                    <p class="text-lg">Join us on a journey through the cosmos of information, where every data point is a star waiting to be discovered.</p>
-                </div>
-                <div class="md:w-1/2 md:pl-8 flex justify-center">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-cosmic-400 rounded-full animate-pulse-slow opacity-50"></div>
-                        <img src="/api/placeholder/400/400" alt="Cosmic Data Visualization" class="rounded-full shadow-lg border-4 border-nebula-400 relative z-10">
-                    </div>
-                </div>
-            </div>
-        </section>
+    <script>
+        // Create starry background
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 200; i++) {
+            const star = document.createElement('div');
+            star.className = 'absolute bg-white rounded-full';
+            star.style.width = `${Math.random() * 2}px`;
+            star.style.height = star.style.width;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.opacity = Math.random();
+            starsContainer.appendChild(star);
+        }
 
-        <section id="capabilities" class="mb-16">
-            <h2 class="text-3xl font-bold mb-6 text-nebula-300">Otherworldly Capabilities</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-cosmic-800 bg-opacity-40 p-6 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-brain text-3xl text-nebula-400 mr-4"></i>
-                        <h3 class="text-xl font-bold text-cosmic-200">Neural Nebula Analysis</h3>
-                    </div>
-                    <p>Our advanced neural networks dive into the depths of your data, discovering hidden connections and patterns invisible to the naked eye.</p>
-                </div>
-                <div class="bg-cosmic-800 bg-opacity-40 p-6 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-chart-line text-3xl text-nebula-400 mr-4"></i>
-                        <h3 class="text-xl font-bold text-cosmic-200">Quantum Trend Prediction</h3>
-                    </div>
-                    <p>Harness the power of quantum computing algorithms to predict future trends with unprecedented accuracy.</p>
-                </div>
-                <div class="bg-cosmic-800 bg-opacity-40 p-6 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-language text-3xl text-nebula-400 mr-4"></i>
-                        <h3 class="text-xl font-bold text-cosmic-200">Galactic Language Processing</h3>
-                    </div>
-                    <p>Decipher the language of the universe with our advanced NLP techniques, extracting meaning from the vast cosmos of textual data.</p>
-                </div>
-                <div class="bg-cosmic-800 bg-opacity-40 p-6 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-project-diagram text-3xl text-nebula-400 mr-4"></i>
-                        <h3 class="text-xl font-bold text-cosmic-200">Constellation Clustering</h3>
-                    </div>
-                    <p>Group and visualize your data points like stars in constellations, revealing the shape and structure of your information universe.</p>
-                </div>
-            </div>
-        </section>
+        // Animate stars
+        gsap.to('#stars div', {
+            opacity: 0.1,
+            stagger: 0.1,
+            repeat: -1,
+            yoyo: true,
+            ease: "power2.inOut",
+        });
 
-        <section id="process" class="mb-16">
-            <h2 class="text-3xl font-bold mb-6 text-nebula-300">The Cosmic Process</h2>
-            <div class="relative">
-                <div class="absolute inset-0 bg-gradient-to-b from-cosmic-600 to-cosmic-800 opacity-50 rounded-lg"></div>
-                <div class="relative bg-cosmic-700 bg-opacity-40 p-8 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm">
-                    <ol class="space-y-6">
-                        <li class="flex items-center">
-                            <span class="bg-nebula-400 rounded-full w-8 h-8 flex items-center justify-center text-cosmic-900 font-bold mr-4">1</span>
-                            <span class="text-lg"><span class="font-bold text-cosmic-300">Data Constellation:</span> Gather and map your raw data points like stars in the night sky.</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="bg-nebula-400 rounded-full w-8 h-8 flex items-center justify-center text-cosmic-900 font-bold mr-4">2</span>
-                            <span class="text-lg"><span class="font-bold text-cosmic-300">Nebula Cleansing:</span> Purify and prepare your data, removing cosmic dust and anomalies.</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="bg-nebula-400 rounded-full w-8 h-8 flex items-center justify-center text-cosmic-900 font-bold mr-4">3</span>
-                            <span class="text-lg"><span class="font-bold text-cosmic-300">Quantum Analysis:</span> Apply our advanced algorithms to decode the hidden patterns and connections.</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="bg-nebula-400 rounded-full w-8 h-8 flex items-center justify-center text-cosmic-900 font-bold mr-4">4</span>
-                            <span class="text-lg"><span class="font-bold text-cosmic-300">Cosmic Visualization:</span> Transform insights into stunning, interactive galactic displays.</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="bg-nebula-400 rounded-full w-8 h-8 flex items-center justify-center text-cosmic-900 font-bold mr-4">5</span>
-                            <span class="text-lg"><span class="font-bold text-cosmic-300">Starlight Insights:</span> Illuminate the path forward with actionable, data-driven recommendations.</span>
-                        </li>
-                    </ol>
-                </div>
-            </div>
-        </section>
+        // NLP Visualizer
+        const visualizers = document.querySelectorAll('.nlp-visualizer');
+        const nlpElements = ['Tokenization', 'Stemming', 'Lemmatization', 'NER', 'Sentiment', 'Summary'];
+        const colors = ['#4dc9ff', '#b967ff', '#ff71ce', '#01cdfe', '#05ffa1', '#fffb96'];
+
+        function createNlpElement(visualizer) {
+            const element = document.createElement('div');
+            const randomElement = nlpElements[Math.floor(Math.random() * nlpElements.length)];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            element.textContent = randomElement;
+            element.className = 'absolute px-3 py-1 text-sm rounded-full font-semibold';
+            element.style.backgroundColor = randomColor;
+            element.style.color = '#0a0a2a';
+            element.style.left = `${Math.random() * 80}%`;
+            element.style.top = `${Math.random() * 80}%`;
+            
+            visualizer.appendChild(element);
+
+            gsap.from(element, {
+                opacity: 0,
+                scale: 0,
+                duration: 0.5,
+                ease: "back.out(1.7)",
+            });
+
+            gsap.to(element, {
+                opacity: 0,
+                scale: 0,
+                duration: 0.5,
+                delay: 2,
+                ease: "back.in(1.7)",
+                onComplete: () => element.remove(),
+            });
+        }
+
+        visualizers.forEach(visualizer => {
+            setInterval(() => createNlpElement(visualizer), 1000);
+        });
+
+        // Scroll animations
+        gsap.utils.toArray('section').forEach((section, i) => {
+            gsap.from(section, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    end: "top 20%",
+                    scrub: 1,
+                }
+            });
+        });
+    </script>
+</body>
+</html>
