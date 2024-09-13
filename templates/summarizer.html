@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <div class="p-5 mb-4 rounded-3">
     <div class="container-fluid py-5">
         <h1 class="display-5 fw-bold">Text Summary</h1>
@@ -48,7 +49,34 @@
 {% endblock %}
 {% block css %}
 <style>
-
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        height: 100%;
+    }
+    body {
+        position: absolute;
+        background-image: url('https://the-decoder.com/wp-content/uploads/2024/04/neural_network_that_summarizes_a_book_illustration-Midjourney.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: white;
+        background-attachment: fixed;   
+    }
+    body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background-attachment: fixed;
+            background-color: rgba(0, 0, 0, 0.648); /* Adjust this value to control the overlay darkness */
+        }
+        
+        
 </style>
 {% endblock %}
 {% block head %}{% endblock %}
