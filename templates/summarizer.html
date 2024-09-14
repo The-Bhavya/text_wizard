@@ -56,7 +56,7 @@
         height: 100%;
     }
     body {
-        position: absolute;
+        position: relative;
         background-image: url('https://the-decoder.com/wp-content/uploads/2024/04/neural_network_that_summarizes_a_book_illustration-Midjourney.png');
         background-size: cover;
         background-position: center;
@@ -65,18 +65,32 @@
         background-attachment: fixed;   
     }
     body::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: -1;
-            background-attachment: fixed;
-            background-color: rgba(0, 0, 0, 0.648); /* Adjust this value to control the overlay darkness */
-        }
-        
-        
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.648);
+        z-index: -1;
+    }
+    .container-fluid {
+        background-color: rgba(0, 0, 0, 0.74);
+        border-radius: 10px;
+        padding: 20px;
+    }
+    .form-select, .btn-primary {
+        background-color: rgba(52, 73, 94, 0.7);
+        border-color: #2c3e50;
+    }
+    .form-select:focus, .btn-primary:focus {
+        background-color: rgba(52, 73, 94, 0.9);
+        border-color: #3498db;
+        box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.5);
+    }
+    .form-text {
+        color: #ccc;
+    }
 </style>
 {% endblock %}
 {% block head %}{% endblock %}

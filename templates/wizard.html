@@ -71,7 +71,48 @@
 {% endblock %}
 {% block css %}
 <style>
-
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        height: 100%;
+    }
+    body {
+        position: relative;
+        background-image: url('https://st4.depositphotos.com/2727515/19619/i/450/depositphotos_196196128-stock-photo-space-amazing-dark-theme-background.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: white;
+        background-attachment: fixed;   
+    }
+    body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.648);
+        z-index: -1;
+    }
+    .container-fluid {
+        background-color: rgba(0, 0, 0, 0.74);
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .form-select, .btn-primary {
+        background-color: rgba(52, 73, 94, 0.7);
+        border-color: #2c3e50;
+    }
+    .form-select:focus, .btn-primary:focus {
+        background-color: rgba(52, 73, 94, 0.9);
+        border-color: #3498db;
+        box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.5);
+    }
+    .form-text {
+        color: #ccc;
+    }
 </style>
 {% endblock %}
 {% block head %}{% endblock %}
