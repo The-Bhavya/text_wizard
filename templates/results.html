@@ -6,12 +6,12 @@
 <div class="container py-5">
     
     {% for item in results %}
-       <div class="card">
+        <div class="card">
         <div class="card-img">
             <img src="{{item.poster}}" alt="{{item.movie}}" class="img-fluid">
         </div>
         {{item.movie}}
-       </div>
+        </div>
     {% endfor %}
 </div>
 {% endblock %}
