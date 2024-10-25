@@ -16,11 +16,12 @@ python app.py
 ![image](https://github.com/user-attachments/assets/bfae8fd0-6739-46f2-aa81-0632047e7b04)
 ## About Page
 ![image](https://github.com/user-attachments/assets/869f2f6f-2101-407b-b998-04e969841dce)
-![image](https://github.com/user-attachments/assets/af32d054-f675-461f-9c11-622349e221f3)
+![image](https://github.com/user-attachments/assets/5ae0487f-dd0a-4ff8-90b0-6c3eb79f19fa)
 ## Upload page
 ![image](https://github.com/user-attachments/assets/7f1f2506-192c-4d75-ba02-eced1bd30fa1)
-# Text Summarizer
+## Wizard operations
 ![image](https://github.com/user-attachments/assets/9f7e4847-6745-4e52-9546-3f26537b008b)
+## Text Summarizer
 ![image](https://github.com/user-attachments/assets/e0f50e67-ab97-43de-9954-dd9112d51e48)
 ## Sentiment Analysis 
 ![image](https://github.com/user-attachments/assets/b2c446c3-5dbf-4340-b404-98cb6ece7467)
