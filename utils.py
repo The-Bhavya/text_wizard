@@ -1,3 +1,9 @@
+import nltk
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+# Download VADER lexicon if not already downloaded
+nltk.download('vader_lexicon')
+
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lsa import LsaSummarizer
@@ -50,24 +56,29 @@ def allowed_file_type(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def analyze_sentiment_from_file(file_path):
+
     # Ensure the file exists
     if not Path(file_path).is_file():
         raise FileNotFoundError(f"File not found: {file_path}")
 
     # Read text from file
-    # with open(file_path, 'r', encoding='utf-8') as file:
-    #     text = file.read()
     text = get_data(path=file_path)
-    # Split text into sentences
+
+    # Split text into sentences (can keep using split('.') or improve later with sent_tokenize)
     sentences = text.split('.')
     sentiments = []
     results = []
+
+    # Initialize VADER sentiment analyzer
+    analyzer = SentimentIntensityAnalyzer()
+
     # Analyze sentiment for each sentence
     for sentence in sentences:
         if sentence.strip():  # Skip empty sentences
-            analysis = TextBlob(sentence)
-            sentiments.append(analysis.sentiment.polarity)
-            results.append((sentence, analysis.sentiment.polarity))
+            score = analyzer.polarity_scores(sentence)['compound']
+            sentiments.append(score)
+            results.append((sentence, score))
+
     # set theme to dark
     px.defaults.template = "plotly_dark"
 
@@ -84,9 +95,8 @@ def analyze_sentiment_from_file(file_path):
         yaxis_title="Sentiment Polarity",
         yaxis=dict(range=[-1, 1]),
         showlegend=False,
-        template = "plotly_dark"
+        template="plotly_dark"
     )
-    
 
     # Overall sentiment pie chart
     positive = sum(1 for s in sentiments if s > 0)
@@ -100,11 +110,17 @@ def analyze_sentiment_from_file(file_path):
     }
 
     pie_chart = px.pie(
-        names=list(overall_sentiment.keys()),
-        values=list(overall_sentiment.values()),
-        title="Overall Sentiment Distribution",
-        hole=0.3
-    )
+    names=list(overall_sentiment.keys()),
+    values=list(overall_sentiment.values()),
+    title="Overall Sentiment Distribution",
+    hole=0.3,
+    color_discrete_map={
+        'Positive': 'limegreen',
+        'Negative': 'crimson',
+        'Neutral': 'lightgray'
+    }
+)
+
 
     return bar_chart, pie_chart, results
 
